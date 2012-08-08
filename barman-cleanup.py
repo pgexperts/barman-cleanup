@@ -16,7 +16,7 @@ for line in backuplist.stdout:
                         server, backupid = backup.split()
                         deleteit = Popen(["barman", "delete", server, backupid])
         except:
-                sys.write.stderr("Unable to split line due to incorrect number of values.\n")
-                sys.write.stderr(line + "\n")
+                sys.stderr.write("Unable to split line due to incorrect number of values.\n")
+                sys.stderr.write(line + "\n")
                 
 
