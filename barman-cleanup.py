@@ -3,7 +3,9 @@
 from subprocess import Popen, PIPE
 import sys
 
-backuplist = Popen(["barman", "list-backup", "pgx-test"], stdout=PIPE)
+dbserver = args[0]
+
+backuplist = Popen(["barman", "list-backup", dbserver], stdout=PIPE)
 
 i = 0
 
