@@ -3,7 +3,7 @@
 from subprocess import Popen, PIPE
 import sys
 
-dbserver = args[0]
+dbserver = sys.argv[0]
 
 backuplist = Popen(["barman", "list-backup", dbserver], stdout=PIPE)
 
