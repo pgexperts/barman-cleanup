@@ -18,7 +18,7 @@ for line in backuplist.stdout:
             # We delete delete FAILED backups with impunity and
             # don't
             # count them toward the 2 saved backups
-            deleteit = Popen(["barman", "delete", server, backupid])
+            deleteit = Popen(["barman", "-q", "delete", server, backupid])
         except:
             sys.stderr.write("Unable to split line due to incorrect number of values.\n")
             sys.stderr.write(line + "\n")
@@ -30,7 +30,7 @@ for line in backuplist.stdout:
             if i > 2:
                 #print "Deleting " + backup
                 server, backupid = backup.split()
-                deleteit = Popen(["barman", "delete", server, backupid])
+                deleteit = Popen(["barman", "-q", "delete", server, backupid])
         except:
             sys.stderr.write("Unable to split line due to incorrect number of values.\n")
             sys.stderr.write(line + "\n")
